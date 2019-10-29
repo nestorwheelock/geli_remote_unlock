@@ -18,6 +18,13 @@ IFS=' ' read -r COMMAND FILE <<< "$INPUT"
 # Before doing anything else, send the alert mail (if configured)
 [ -x "$ALERT_SCRIPT" ] && "${ALERT_SCRIPT}"
 
+# Nestor Wheelock
+# Started thinking about how to add other steps like maybe how to use the users password 
+# hash to add a layer of local authentication. Maybe this would be a good place to do 
+# multifactor/OAUTH?  Then if this is deployed on a subscription SAAS managed equipment
+# It could boot and then look for more things from the server, updated configs, CVE scan logs,
+# etc etc.
+
 
 # helper function to signal some error and exit
 err() {
